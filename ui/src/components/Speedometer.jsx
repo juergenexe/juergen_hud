@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { NuiEvent } from "../hooks/NuiEvent";
 import { motion } from "framer-motion";
 import { RouteOff } from "lucide-react";
-import Fade from "../utils/fade";
+import Fade from "../utils/Fade";
 import alarmfile from "../assets/sound/alarm.mp3";
 
 const Speedometer = () => {
@@ -72,7 +72,7 @@ const Speedometer = () => {
           </div>
 
           {!vehicle.seatbelt && vehicle.class !== 8 && (
-            <motion.div className="hud-badge alt"
+            <motion.div className="hud-badge seatbelt-badge"
               animate={{ borderColor: ['#ff0000', 'rgba(255,255,255,0.15)', '#ff0000'] }}
               transition={{ repeat: Infinity, duration: 0.8 }}>
               <RouteOff size="1vw" color="#ff0000" />

@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import Fade from "../utils/fade";
+import Fade from "../utils/Fade";
 import { NuiEvent } from "../hooks/NuiEvent";
 import { useSelector } from "react-redux";
 import AnimatedNumber from "animated-number-react";

@@ -1,7 +1,7 @@
 import './App.css'
 import Hud from './components/Hud'
 import { useState } from 'react';
-import Fade from './utils/fade';
+import Fade from './utils/Fade';
 import { NuiEvent } from './hooks/NuiEvent';
 function App() {
 

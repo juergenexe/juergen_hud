@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import Fade from "../utils/fade";
+import Fade from "../utils/Fade";
 import Minimap from "./Minimap";
 import Speedometer from "./Speedometer";
 import Compass from "./Compass";
