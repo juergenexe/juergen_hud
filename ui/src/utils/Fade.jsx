@@ -12,7 +12,7 @@ const Fade = props => {
       timeout={200}
       unmountOnExit
     >
-      <span ref={nodeRef}>{props.children}</span>
+      <div ref={nodeRef} className="fade-slot">{props.children}</div>
     </CSSTransition>
   )
 }

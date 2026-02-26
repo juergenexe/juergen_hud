@@ -68,6 +68,8 @@ CreateThread(function()
                 heading = dgr,
                 location1 = location1,
                 location2 = location2,
+                hours = GetClockHours(),
+                minutes = GetClockMinutes(),
             }
 
             NuiMessage('compass', data)
