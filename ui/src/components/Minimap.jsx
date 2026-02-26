@@ -27,8 +27,8 @@ const Minimap = () => {
           <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.5" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(279 50 50)" />
           {settings.minimapextrastatus && (
             <>
-              <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.2" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(8 50 50)" />
-              <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.2" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(99 50 50)" />
+              <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.5" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(9 50 50)" />
+              <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.5" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(99 50 50)" />
             </>
           )}
 
@@ -41,15 +41,7 @@ const Minimap = () => {
             transition={spring} transform="rotate(279 50 50)" style={{ filter: "drop-shadow(0 0 3px var(--neon-cyan))" }} />
 
           {settings.minimapextrastatus && (
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="46"
-              fill="none"
-              stroke="var(--neon-lime)"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-              pathLength={pathLen}
+            <motion.circle cx="50" cy="50" r="46" fill="none" stroke="var(--neon-orange)" strokeWidth="2.5" strokeLinecap="round" pathLength={pathLen}
               strokeDasharray={`${(status.hunger / 100) * arcLen} ${pathLen}`}
               transition={spring} transform="rotate(9 50 50)" style={{ filter: "drop-shadow(0 0 3px var(--neon-orange))" }} />
           )}
