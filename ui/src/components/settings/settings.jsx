@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import Fade from "../../utils/fade";
+import Fade from "../../utils/Fade";
 import settingsicon from "../../assets/images/settings.png";
 import Select from "./select";
 import Button from "./button";
