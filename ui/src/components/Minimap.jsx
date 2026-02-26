@@ -13,23 +13,18 @@ const Minimap = () => {
 
   const spring = { type: "spring", stiffness: 60, damping: 15 };
   const pathLen = 100;
-  const arcLen = 18;
-  const gap = 82;
+  const arcLen = 20;
+  const gap = 80;
 
   return (
     <Fade in={settings.showminimap}>
       <div className="hud-container minimap-wrapper" style={{ transform: `scale(${settings.minimapsize / 50})` }}>
         <div className="glass-donut" />
-        <div className="ring-features">
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
+        <div className="minimap-core-glow" />
 
         <svg className="svg-overlay" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.2" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(188 50 50)" />
-          <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.2" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(279 50 50)" />
+          <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.5" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(189 50 50)" />
+          <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.5" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(279 50 50)" />
           {settings.minimapextrastatus && (
             <>
               <circle cx="50" cy="50" r="46" fill="none" stroke="var(--track-color)" strokeWidth="1.2" pathLength={pathLen} strokeDasharray={`${arcLen} ${gap}`} transform="rotate(8 50 50)" />
@@ -37,35 +32,13 @@ const Minimap = () => {
             </>
           )}
 
-          <motion.circle
-            cx="50"
-            cy="50"
-            r="46"
-            fill="none"
-            stroke="var(--neon-pink)"
-            strokeWidth="2.8"
-            strokeLinecap="round"
-            pathLength={pathLen}
+          <motion.circle cx="50" cy="50" r="46" fill="none" stroke="var(--neon-pink)" strokeWidth="2.5" strokeLinecap="round" pathLength={pathLen}
             strokeDasharray={`${(status.health / 100) * arcLen} ${pathLen}`}
-            transition={spring}
-            transform="rotate(188 50 50)"
-            style={{ filter: "drop-shadow(0 0 4px var(--neon-pink))" }}
-          />
+            transition={spring} transform="rotate(189 50 50)" style={{ filter: "drop-shadow(0 0 3px var(--neon-pink))" }} />
 
-          <motion.circle
-            cx="50"
-            cy="50"
-            r="46"
-            fill="none"
-            stroke="var(--neon-cyan)"
-            strokeWidth="2.8"
-            strokeLinecap="round"
-            pathLength={pathLen}
+          <motion.circle cx="50" cy="50" r="46" fill="none" stroke="var(--neon-cyan)" strokeWidth="2.5" strokeLinecap="round" pathLength={pathLen}
             strokeDasharray={`${(status.armour / 100) * arcLen} ${pathLen}`}
-            transition={spring}
-            transform="rotate(279 50 50)"
-            style={{ filter: "drop-shadow(0 0 4px var(--neon-cyan))" }}
-          />
+            transition={spring} transform="rotate(279 50 50)" style={{ filter: "drop-shadow(0 0 3px var(--neon-cyan))" }} />
 
           {settings.minimapextrastatus && (
             <motion.circle
@@ -78,29 +51,17 @@ const Minimap = () => {
               strokeLinecap="round"
               pathLength={pathLen}
               strokeDasharray={`${(status.hunger / 100) * arcLen} ${pathLen}`}
-              transition={spring}
-              transform="rotate(8 50 50)"
-              style={{ filter: "drop-shadow(0 0 4px var(--neon-lime))" }}
-            />
+              transition={spring} transform="rotate(9 50 50)" style={{ filter: "drop-shadow(0 0 3px var(--neon-orange))" }} />
           )}
 
           {settings.minimapextrastatus && (
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="46"
-              fill="none"
-              stroke="var(--neon-orange)"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-              pathLength={pathLen}
+            <motion.circle cx="50" cy="50" r="46" fill="none" stroke="var(--neon-lime)" strokeWidth="2.5" strokeLinecap="round" pathLength={pathLen}
               strokeDasharray={`${(status.thirst / 100) * arcLen} ${pathLen}`}
-              transition={spring}
-              transform="rotate(99 50 50)"
-              style={{ filter: "drop-shadow(0 0 4px var(--neon-orange))" }}
-            />
+              transition={spring} transform="rotate(99 50 50)" style={{ filter: "drop-shadow(0 0 3px var(--neon-lime))" }} />
           )}
         </svg>
+
+        <div className="minimap-avatar" />
 
         <div className="hud-badge alt" aria-label="alt-badge">
           <MousePointer2 size="1vw" color="#fff" />
